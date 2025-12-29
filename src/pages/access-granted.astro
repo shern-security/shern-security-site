@@ -1,0 +1,222 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Access Granted',
+  description: 'Connect internet access to chores and responsibility - teaching digital citizenship through positive reinforcement',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">Access Granted</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Teaching Digital Citizenship Through Positive Reinforcement
+      <br /><br />
+      A revolutionary approach to parental controls that connects firewall management with household chores and activities,
+      empowering children to earn their internet time through responsibility.
+    </Fragment>
+  </Hero>
+
+  <!-- How It Works -->
+  <Steps
+    title="How It Works"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Set Tasks</span>',
+        description: 'Parents create chores and activities with time credits',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Complete Tasks</span>',
+        description: 'Children finish chores and mark them complete',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Earn Access</span>',
+        description: 'Time credits unlock internet access automatically',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Enjoy Online</span>',
+        description: 'Kids use their earned time with confidence',
+        icon: 'tabler:number-4',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- Key Features -->
+  <Features
+    id="features"
+    title="Key Features"
+    subtitle="Everything you need to teach digital responsibility"
+    columns={3}
+    items={[
+      {
+        title: 'Firewall Integration',
+        description: 'Direct integration with home firewall for seamless access control',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Task Management',
+        description: 'Flexible chore and activity tracking with customizable rewards',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'Time Banking',
+        description: 'Children can save and manage their earned internet time',
+        icon: 'tabler:hourglass',
+      },
+      {
+        title: 'Parent Dashboard',
+        description: 'Real-time monitoring and activity reports',
+        icon: 'tabler:dashboard',
+      },
+      {
+        title: 'Device Management',
+        description: 'Control access per device and user profile',
+        icon: 'tabler:devices',
+      },
+      {
+        title: 'Positive Reinforcement',
+        description: 'Build responsibility through earning, not punishment',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+
+  <!-- Benefits for Parents -->
+  <Content
+    isReversed
+    title="Benefits for Parents"
+    items={[
+      {
+        title: 'Reduce screen time conflicts',
+        description: 'Clear expectations eliminate daily arguments about internet access',
+      },
+      {
+        title: 'Motivate household participation',
+        description: 'Children actively complete chores to earn their online time',
+      },
+      {
+        title: 'Gain visibility',
+        description: 'Monitor usage patterns and understand digital behavior',
+      },
+      {
+        title: 'Teach time management',
+        description: 'Help children learn to budget and prioritize their time',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Empower Your Parenting</h3>
+      Transform screen time from a battle into a teaching moment
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Benefits for Children -->
+  <Content
+    title="Benefits for Children"
+    items={[
+      {
+        title: 'Clear path to success',
+        description: 'Understand exactly how to earn internet time',
+      },
+      {
+        title: 'Build responsibility',
+        description: 'Develop work ethic and commitment to tasks',
+      },
+      {
+        title: 'Learn time management',
+        description: 'Practice prioritization and planning skills',
+      },
+      {
+        title: 'Experience positive motivation',
+        description: 'Earn privileges through achievement vs. fear punishment',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Growing Digital Citizens
+      </h3>
+      Help your children develop healthy relationships with technology
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Technical Architecture -->
+  <Content
+    isReversed
+    isAfterContent={true}
+    title="Technical Architecture"
+    items={[
+      {
+        title: 'Firewall API Integration',
+        description: 'Direct control of network access rules',
+      },
+      {
+        title: 'Web Dashboard',
+        description: 'Parent and child portals for task management',
+      },
+      {
+        title: 'Mobile Apps',
+        description: 'iOS and Android for on-the-go management',
+      },
+      {
+        title: 'Real-time Sync',
+        description: 'Instant updates across all devices',
+      },
+      {
+        title: 'Secure Authentication',
+        description: 'Multi-user support with role-based access',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Built for Reliability
+      </h3>
+      Modern cloud architecture ensures secure, scalable operation
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-purple-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Project Status"
+    subtitle="Access Granted is currently in active development. We're building this platform to help families bridge the gap between digital freedom and responsibility."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Read the Blog',
+        href: '/blog',
+      },
+      {
+        variant: 'secondary',
+        text: 'View Resume',
+        href: '/resume',
+      },
+    ]}
+  />
+</Layout>

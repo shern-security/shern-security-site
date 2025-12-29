@@ -1,0 +1,163 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Resume',
+  description: 'Professional experience and qualifications of Jon Shern - Cybersecurity Leader',
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+    <!-- Header -->
+    <div class="text-center mb-12 pb-8 border-b border-gray-200 dark:border-gray-700">
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Jon Shern</h1>
+      <p class="text-xl md:text-2xl text-muted mb-4">Cybersecurity Leader</p>
+      <div class="text-sm md:text-base text-muted space-y-1">
+        <p>+1 320-293-9154 | jon.shern@gmail.com | Plymouth, MN</p>
+        <p>
+          <a href="https://linkedin.com/in/jonshern" class="text-primary hover:underline" target="_blank" rel="noopener">
+            LinkedIn/jonshern
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Summary</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Enterprise Security Leader with 15+ years of experience guiding organizations through complex security transformations.
+        Known as a positive, people-first coach who helps teams transition from traditional security models to modern,
+        engineering-driven approaches such as Infrastructure and Security as Code. Proven record in identity, infrastructure
+        security, governance, and compliance with expertise in CIS, NIST, and PCI frameworks. Skilled at building strategy,
+        developing measurable metrics, and influencing senior leadership to drive secure enterprise adoption.
+      </p>
+      <div class="mt-4">
+        <h3 class="font-semibold mb-2">Professional Skills:</h3>
+        <p class="text-muted">
+          Communication | Strategic thinking | Agile methodologies | Data analysis | Customer empathy |
+          Project Management | Product development | Governance and Compliance
+        </p>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Work Experience</h2>
+      <div class="space-y-8">
+        <!-- Entegris -->
+        <div class="border-l-4 border-primary pl-6">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <h3 class="text-xl font-semibold">Principal Security Architect</h3>
+            <span class="text-sm text-muted">October 2024 – Present</span>
+          </div>
+          <p class="text-muted mb-3 font-medium">Entegris, Minnesota</p>
+          <ul class="space-y-2 text-muted list-disc list-inside">
+            <li>Designed and delivered DevSecOps training across engineering teams, coaching Infrastructure as Code and Policy as Code approaches for secure development.</li>
+            <li>Authored and rolled out the Enterprise Network Security Policy, aligning to regulatory requirements and industry best practices.</li>
+            <li>Coach and motivate team around engineering automation practices, and move team to a more sustainable operational model.</li>
+            <li>Built out automation for Entra, PAM, Netskope using Terraform and CI/CD.</li>
+            <li>Created enterprise Privileged Access Management roadmap, including vendor analysis and strategy for onboarding.</li>
+            <li>Built the Security Architecture practice base level architectures around Agentic AI, Ingress/Egress, GCP/Azure API Patterns.</li>
+            <li>Drove adoption of Secure Web Gateway (Netskope), including operational automation, and policy development/automation.</li>
+            <li>Developed metrics and dashboards to measure Secure Web Gateway adoption and PAM usage, enabling data-driven security decisions.</li>
+          </ul>
+          <p class="text-sm text-muted mt-3 italic">
+            Skills: Policy and Standard Development, DevSecOps, Infrastructure as Code, Policy as Code, PAM, SWG, Metrics & Dashboards, Python
+          </p>
+        </div>
+
+        <!-- Cargill Product Manager -->
+        <div class="border-l-4 border-secondary pl-6">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <h3 class="text-xl font-semibold">Lead Product Manager - Identity</h3>
+            <span class="text-sm text-muted">July 2021 – October 2024</span>
+          </div>
+          <p class="text-muted mb-3 font-medium">Cargill, Minnesota</p>
+          <ul class="space-y-2 text-muted list-disc list-inside">
+            <li>Architected and led enterprise IAM strategy, including SSO, Conditional Access, PKI, and PAM for 80k+ employees.</li>
+            <li>Managed Cloud Network Security and Infrastructure automation.</li>
+            <li>Created and managed product backlog in Jira, writing user stories/features and refining roadmap with engineering teams.</li>
+            <li>Coached a team to embrace new techniques around automation and removed over 80% of their operational work by enabling their ability to automate their own manual work.</li>
+            <li>Partnered with cybersecurity, risk, and compliance teams to align identity security strategy with enterprise governance.</li>
+            <li>Reduced costs by $600K annually while delivering colleague-driven, API-first authentication services.</li>
+            <li>Built metrics and dashboards to track PAM usage and adoption, providing leadership with actionable insights.</li>
+          </ul>
+          <p class="text-sm text-muted mt-3 italic">
+            Skills: IAM, Azure AD/Entra, SSO, Conditional Access, PKI, PAM, Jira, Roadmap & Backlog Management, Metrics & Dashboards
+          </p>
+        </div>
+
+        <!-- Cargill Security Architect -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <h3 class="text-xl font-semibold">Principal Cloud Security Architect / Principal Engineer</h3>
+            <span class="text-sm text-muted">August 2016 – July 2021</span>
+          </div>
+          <p class="text-muted mb-3 font-medium">Cargill, Minnesota</p>
+          <ul class="space-y-2 text-muted list-disc list-inside">
+            <li>Architected AWS compliance framework leveraging serverless, delivering real-time visibility for governance and audit readiness.</li>
+            <li>Built IP Scanner & Vulnerability Detection Platform: High-performance Go application using SQS and Lambda to scan 10K+ IPs in under an hour, with IPAM integration and automated compliance screenshot capture.</li>
+            <li>Coached team around new network security approaches. Drove automation and self-service approaches to firewall rules, enabling engineering teams to move faster while having a more secure network policy.</li>
+            <li>Built Policy as Code Framework using Open Policy Agent for Cloud Security Policies.</li>
+            <li>Developed infrastructure-as-code (Terraform) for firewall rules, IAM, and network security standards.</li>
+            <li>Partnered with engineering and product teams to operationalize security policy into consumable cloud patterns.</li>
+            <li>Reviewed and approved security architectures across business-critical cloud projects (AWS/Azure).</li>
+          </ul>
+          <p class="text-sm text-muted mt-3 italic">
+            Skills: Go Lang, Python, AWS, Azure, Security Architecture, Serverless, Terraform, Firewall/Network Security, Compliance Frameworks
+          </p>
+        </div>
+
+        <!-- Cargill Engineering Manager -->
+        <div class="border-l-4 border-primary pl-6 opacity-90">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <h3 class="text-xl font-semibold">Engineering Manager</h3>
+            <span class="text-sm text-muted">June 2011 – August 2016</span>
+          </div>
+          <p class="text-muted mb-3 font-medium">Cargill, Minnesota</p>
+          <ul class="space-y-2 text-muted list-disc list-inside">
+            <li>Managed team of 8–13 engineers delivering enterprise-scale applications with budgets of $3M–$4.5M.</li>
+            <li>Architected iOS/Azure mobile companion app and core RESTful services to modernize legacy platforms.</li>
+            <li>Spearheaded rewrite of major client app and web app, improving customer satisfaction and reducing defects.</li>
+            <li>Introduced Agile, continuous deployment, and code review practices, driving quality and efficiency.</li>
+          </ul>
+          <p class="text-sm text-muted mt-3 italic">
+            Skills: Team Leadership, Agile, Azure, iOS, RESTful Services, Continuous Deployment, Application Architecture
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Education</h2>
+      <div class="border-l-4 border-secondary pl-6">
+        <h3 class="text-xl font-semibold">Bachelor's Degree</h3>
+        <p class="text-muted">St. Cloud State University (SCSU), St. Cloud, MN | 2002</p>
+        <p class="text-muted mt-2">Applied Computer Science</p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Certifications</h2>
+      <div class="space-y-4">
+        <div class="pl-6">
+          <h3 class="font-semibold">AWS Professional Architect Certification</h3>
+          <p class="text-muted">2019</p>
+        </div>
+        <div class="pl-6">
+          <h3 class="font-semibold">CIS Security Training</h3>
+          <p class="text-muted">2017</p>
+        </div>
+        <div class="pl-6">
+          <h3 class="font-semibold">Fundamentals of Management</h3>
+          <p class="text-muted">Cargill Leadership Academy | 2013</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
