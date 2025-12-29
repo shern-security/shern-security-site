@@ -1,46 +1,35 @@
-variable "aws_region" {
-  description = "AWS region for resources"
+variable "resource_group_name" {
+  description = "Name of the Azure resource group"
   type        = string
-  default     = "us-east-1"
+  default     = "shern-security-rg"
 }
 
-variable "bucket_name" {
-  description = "Name of the S3 bucket for static website hosting (must be globally unique)"
+variable "location" {
+  description = "Azure region for the resource group"
   type        = string
+  default     = "eastus"
 }
 
-variable "environment" {
-  description = "Environment name (e.g., production, staging)"
+variable "static_site_location" {
+  description = "Azure region for Static Web App (limited regions)"
   type        = string
-  default     = "production"
+  default     = "eastus2"
 }
 
-variable "enable_cloudfront" {
-  description = "Enable CloudFront CDN distribution"
-  type        = bool
-  default     = false
-}
-
-variable "cloudfront_price_class" {
-  description = "CloudFront price class (PriceClass_All, PriceClass_200, PriceClass_100)"
+variable "static_site_name" {
+  description = "Name of the Azure Static Web App"
   type        = string
-  default     = "PriceClass_100"
+  default     = "shern-security"
 }
 
 variable "custom_domain" {
-  description = "Custom domain name for the website (e.g., shernsecurity.com)"
+  description = "Custom domain name for the website"
   type        = string
-  default     = ""
+  default     = "shernsecurity.com"
 }
 
-variable "acm_certificate_arn" {
-  description = "ARN of ACM certificate for custom domain (must be in us-east-1 for CloudFront)"
+variable "environment" {
+  description = "Environment name"
   type        = string
-  default     = ""
-}
-
-variable "route53_zone_id" {
-  description = "Route53 hosted zone ID for custom domain"
-  type        = string
-  default     = ""
+  default     = "production"
 }

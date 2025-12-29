@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,11 +6,18 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy-prod:
+  build:
     runs-on: ubuntu-latest
-    environment: production
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,23 +34,18 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          path: ./dist
 
-      - name: Deploy to S3 and CloudFront
-        env:
-          S3_BUCKET_NAME: shern-security-website-2025
-          AWS_REGION: us-east-1
-          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-        run: |
-          chmod +x ./deploy.sh
-          ./deploy.sh
-
-      - name: Deployment Summary
-        run: |
-          echo "✅ Deployment completed successfully!"
-          echo "🌐 Site URL: https://shernsecurity.com"
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
