@@ -23,8 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-  site: 'https://shern-security.github.io',
-  base: '/shern-security-site',
+  site: 'https://shernsecurity.com',
   devToolbar: {
     enabled: false,
   },
