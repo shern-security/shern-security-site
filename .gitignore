@@ -21,4 +21,5 @@ pnpm-debug.log*
 
 pnpm-lock.yaml
 
-.astro
+.astroterraform/
+terraform-backup-aws/

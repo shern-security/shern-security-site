@@ -1,0 +1,22 @@
+# Example terraform.tfvars file
+# Copy this to terraform.tfvars and customize with your values
+
+# Required: S3 bucket name (must be globally unique)
+bucket_name = "shern-security-website"
+
+# Optional: AWS region
+aws_region = "us-east-1"
+
+# Optional: Environment
+environment = "production"
+
+# Optional: Enable CloudFront CDN
+enable_cloudfront = false
+
+# Optional: CloudFront price class (only used if enable_cloudfront = true)
+# cloudfront_price_class = "PriceClass_100"
+
+# Optional: Custom domain (requires ACM certificate and Route53)
+# custom_domain = "shernsecurity.com"
+# acm_certificate_arn = "arn:aws:acm:us-east-1:ACCOUNT_ID:certificate/CERT_ID"
+# route53_zone_id = "Z1234567890ABC"
