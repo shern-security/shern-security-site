@@ -11,8 +11,8 @@ export const headerData = {
       href: getPermalink('/resume'),
     },
     {
-      text: 'Access Granted',
-      href: getPermalink('/access-granted'),
+      text: 'Products',
+      href: getPermalink('/products'),
     },
     {
       text: 'About',
@@ -29,7 +29,7 @@ export const footerData = {
       links: [
         { text: 'Articles', href: getBlogPermalink() },
         { text: 'Resume', href: getPermalink('/resume') },
-        { text: 'Access Granted', href: getPermalink('/access-granted') },
+        { text: 'Products', href: getPermalink('/products') },
         { text: 'About', href: getPermalink('/about') },
       ],
     },

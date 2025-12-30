@@ -1,0 +1,150 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Products - Shern Security',
+  description: 'Innovative security products and tools developed by Shern Security.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero tagline="Products">
+    <Fragment slot="title">
+      Security Products<br />
+      <span class="text-accent dark:text-white highlight">Built for Real-World Impact</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Practical security tools and platforms designed to solve real problems. From enterprise vulnerability detection 
+      to digital citizenship education, each product reflects years of hands-on security experience.
+    </Fragment>
+  </Hero>
+
+  <!-- Security Maturity Assessment *************** -->
+  <Content
+    isReversed
+    tagline="Portfolio Management"
+    title="Security Maturity Assessment"
+    items={[
+      {
+        title: 'Capability-Based Assessment',
+        description:
+          'Comprehensive framework for evaluating security program maturity across governance, controls, and operations.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Portfolio Management',
+        description:
+          'Track security capabilities, tools, and initiatives in one centralized platform with scoring and maturity levels.',
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'Data-Driven Decisions',
+        description:
+          'Export assessments to Excel, import bulk updates, and generate executive summaries with actionable insights.',
+        icon: 'tabler:file-analytics',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Security Assessment Dashboard',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Measure Security Program Effectiveness</h3>
+      A modern portfolio management tool that helps CISOs and security leaders assess, track, and improve their security 
+      capabilities over time. Built with React and deployed as a standalone web application.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- IP Scanner Platform *************** -->
+  <Content
+    isAfterContent
+    tagline="Vulnerability Detection"
+    title="IP Scanner Platform"
+    items={[
+      {
+        title: 'High-Performance Architecture',
+        description:
+          'Originally Python, converted to Go for performance. Leverages SQS and Lambda to scan 10K+ IPs in under an hour.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Comprehensive Scanning',
+        description:
+          'Actively finds vulnerabilities in corporate environments with both external and internal scanning capabilities.',
+        icon: 'tabler:radar',
+      },
+      {
+        title: 'IPAM Integration',
+        description:
+          'Aggregates results and integrates with IP Address Management tools for streamlined vulnerability management.',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Network Security Scanning',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Enterprise-Scale Vulnerability Detection</h3>
+      Serverless architecture delivering rapid, comprehensive network security scanning. Built with Go, AWS Lambda, and SQS 
+      for maximum throughput and reliability.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Access Granted *************** -->
+  <Content
+    isReversed
+    isAfterContent
+    tagline="Digital Citizenship"
+    title="Access Granted"
+    items={[
+      {
+        title: 'Innovative Approach',
+        description:
+          'Connects firewall management with household chores, teaching children responsibility through positive reinforcement.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Real-world Impact',
+        description:
+          'Helps families bridge the gap between digital freedom and accountability, turning screen time into teaching moments.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Technical Excellence',
+        description:
+          'Modern cloud architecture with firewall API integration, real-time sync, and multi-device support.',
+        icon: 'tabler:cloud-computing',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Digital Citizenship',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building the Future of Parental Controls</h3>
+      Empowering children to earn internet access through completing tasks and activities. A unique approach to digital 
+      citizenship that teaches responsibility while giving parents peace of mind.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>
